@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: addservice
+  labels:
+    run: addservice
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: addservice
+    spec:
+      containers:
+      - name: addservice
+        image: addservice
+        ports:
+        - containerPort: 2222
+          protocol: TCP
