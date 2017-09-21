@@ -1,0 +1,5 @@
+FROM openjdk:alpine
+MAINTAINER Mayank Srivastava <mayankdiatm@gmail.com>
+ADD target/subService.jar subService.jar
+ENTRYPOINT ["java", "-jar", "/subService.jar"]
+EXPOSE 2244
