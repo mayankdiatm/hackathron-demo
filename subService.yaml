@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: subservice
+  labels:
+    run: subservice
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        run: subservice
+    spec:
+      containers:
+      - name: subservice
+        image: subservice
+        ports:
+        - containerPort: 2244
+          protocol: TCP
